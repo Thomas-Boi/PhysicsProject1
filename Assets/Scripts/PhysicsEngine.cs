@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PhysicsEngine : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public float mass;
+
+    public Vector3 velocityVector;
+    public Vector3 netForceVector;
+    public List<Vector3> forceVectorList;
+
+
     void Start()
     {
-        
+        // by default the mass is 1
+        mass = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.position += velocityVector * Time.fixedDeltaTime;
     }
 }
